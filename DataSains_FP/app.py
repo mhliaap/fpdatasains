@@ -2,9 +2,11 @@ import streamlit as st
 import numpy as np
 import pickle
 
-# Load model dan scaler
-model = pickle.load(open("model_rf.pkl", "rb"))
-scaler = pickle.load(open("scaler.pkl", "rb"))
+import os
+
+BASE_DIR = os.path.dirname(__file__)
+model = pickle.load(open(os.path.join(BASE_DIR, "model_rf.pkl"), "rb"))
+scaler = pickle.load(open(os.path.join(BASE_DIR, "scaler.pkl"), "rb"))
 
 st.title("Prediksi Penyakit Jantung")
 
